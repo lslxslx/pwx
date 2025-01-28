@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ngarko të dhënat e JSON përkatës
         const response = await fetch(`json/${subject}.json`);
         studentData = await response.json();
-        resultDiv.textContent = "Të dhënat u ngarkuan. Tani shkruaj emrin tënd.";
+        resultDiv.textContent = "";
       } catch (error) {
         console.error('Gabim gjatë ngarkimit të të dhënave:', error);
         resultDiv.textContent = "Gabim gjatë ngarkimit të të dhënave.";
