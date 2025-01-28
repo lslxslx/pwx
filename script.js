@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // Ngarko të dhënat e JSON përkatës
-            const response = await fetch(`data/${subject}.json`);
+            // Ngarko të dhënat nga Google Drive përmes ID-së së skedarit
+            const response = await fetch(`https://drive.google.com/uc?export=download&id=${fileId}`);
             studentData = await response.json();
             resultDiv.textContent = "Të dhënat u ngarkuan. Tani shkruaj emrin tënd.";
         } catch (error) {
