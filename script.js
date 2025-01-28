@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const token = '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'; // Vendosni token-in tuaj këtu
-      const response = await fetch(`https://api.github.com/repos/USERNAME/REPO_NAME/contents/data/${subject}.json`, {
+      const response = await fetch(`https://api.github.com/repos/lslxslx/WebData/contents/${subject}.json`, {
         method: 'GET',
         headers: {
           'Authorization': `token ${token}`
