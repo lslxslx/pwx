@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <strong>Data:</strong> ${formattedDate}
           `;
       } else {
-        resultDiv.textContent = `${name}, a ke bërë provim?!`;
+        resultDiv.textContent = `${studentNameInput.value.trim()}, a ke bërë provim?!`;
       }
     }
   });
