@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subject = subjectSelect.value;
 
     if (!subject) {
-      resultDiv.textContent = "Të lutem, zgjidh lëndën.";
+      resultDiv.textContent = "Nëse dëshiron, zgjidh lëndën.";
       studentNameInput.disabled = true;
       return;
     }
