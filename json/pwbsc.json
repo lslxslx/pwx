@@ -1,7 +1,30 @@
 [
     {
-        "Start time": "",
-        "Total points": 0,
-        "Emri Mbiemri": ""
+        "Start time": "1.27.25 11:19:51",
+        "Completion time": "1.27.25 11:32:04",
+        "Total points": 42,
+        "Emri Mbiemri": "Laskarina Seferi",
+        "Nota": 4
+    },
+    {
+        "Start time": "1.27.25 11:19:54",
+        "Completion time": "1.27.25 11:33:32",
+        "Total points": 52,
+        "Emri Mbiemri": "melina zeraj",
+        "Nota": 5
+    },
+    {
+        "Start time": "1.27.25 11:20:09",
+        "Completion time": "1.27.25 11:35:40",
+        "Total points": 52,
+        "Emri Mbiemri": "Megi",
+        "Nota": 5
+    },
+    {
+        "Start time": "1.27.25 11:20:04",
+        "Completion time": "1.27.25 11:38:59",
+        "Total points": 45,
+        "Emri Mbiemri": "Armela Milushi",
+        "Nota": 5
     }
 ]
