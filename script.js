@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       try {
         // Ngarko të dhënat e JSON përkatës
-        const response = await fetch(`data/${subject}.json`);
+        const response = await fetch(`json/${subject}.json`);
         studentData = await response.json();
         resultDiv.textContent = "Të dhënat u ngarkuan. Tani shkruaj emrin tënd.";
       } catch (error) {
