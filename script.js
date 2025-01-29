@@ -37,9 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Filtrimi i të dhënave të studentëve
-      const student = studentData.find(student =>
-        student["Kodi"] === code
-      );
+      const student = studentData.find(student => student["Kodi"] === code);
 
       if (student) {
         // Përpuno datën nga formati JSON
