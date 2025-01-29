@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subject = subjectSelect.value;
 
     if (!subject) {
-      resultDiv.textContent = "Nëse dëshiron, zgjidh lëndën.";
+      resultDiv.textContent = "Zgjidh lëndën.";
       studentNameInput.disabled = true;
       return;
     }
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <strong>Data:</strong> ${formattedDate}
           `;
       } else {
-        resultDiv.textContent = `${studentNameInput.value.trim()}, a ke bërë provim?!`;
+        resultDiv.textContent = `Nuk kam të dhëna për emrin tënd, ${studentNameInput.value.trim()}.`;
       }
     }
   });
