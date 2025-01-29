@@ -1,7 +1,7 @@
 body {
   font-family: "Open Sans", serif;
   font-optical-sizing: auto;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
   background-color: #171d2e;
   margin: 0;
@@ -18,7 +18,7 @@ body {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -28,7 +28,7 @@ input {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  font-size: 16px;
+  font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
@@ -36,7 +36,7 @@ input {
 
 #result {
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
 }
 
@@ -55,16 +55,16 @@ ul {
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   select,
   input {
-    font-size: 14px;
+    font-size: 12px;
     padding: 10px;
   }
 
   #result {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
