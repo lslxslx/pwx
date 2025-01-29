@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 444px;
   margin: 20px auto;
   background: #ebebeb;
   padding: 20px;
@@ -17,21 +17,19 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 select,
 input {
   width: 100%;
-  padding: 12px;
+  padding: .5em;
   margin: 10px 0;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
+}
+
+input {
+  border: 1px solid transparent;
 }
 
 #result {
