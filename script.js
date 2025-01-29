@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const subjectSelect = document.getElementById('subjectSelect');
-  const studentNameInput = document.getElementById('studentName');
+  const studentCodeInput = document.getElementById('studentCode');
   const resultDiv = document.getElementById('result');
 
   let studentData = []; // Të dhënat e studentëve
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!subject) {
       resultDiv.textContent = "Zgjidh lëndën.";
-      studentNameInput.disabled = true;
+      studentCodeInput.disabled = true;
       return;
     }
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Ngarko të dhënat e JSON përkatës
       const response = await fetch(`json/${subject}.json`);
       studentData = await response.json();
-      studentNameInput.disabled = false;
+      studentCodeInput.disabled = false;
     } catch (error) {
       console.error('Gabim gjatë ngarkimit të të dhënave:', error);
       resultDiv.textContent = "Gabim gjatë ngarkimit të të dhënave.";
@@ -27,18 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Kur përdoruesi shtyp Enter në fushën e emrit
-  studentNameInput.addEventListener('keypress', (event) => {
+  studentCodeInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-      const name = studentNameInput.value.trim().toLowerCase();
+      const code = studentCodeInput.value.trim();
 
-      if (!name) {
-        resultDiv.textContent = "Po pra, po emrin si e ke?!";
+      if (!code) {
+        resultDiv.textContent = "Po pra, po kodi cili është?!";
         return;
       }
 
       // Filtrimi i të dhënave të studentëve
       const student = studentData.find(student =>
-        student["Emri Mbiemri"].toLowerCase() === name
+        student["Kodi"] === code
       );
 
       if (student) {
@@ -51,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const calculatedGrade = calculateGrade(totalPoints);
 
         resultDiv.innerHTML = `
-            <strong>Emri:</strong> ${titleCase(student["Emri Mbiemri"])}<br>
-            <strong>Nota:</strong> ${calculatedGrade}<br>
-            <strong>Pikët totale:</strong> ${totalPoints}<br>
-            <strong>Data:</strong> ${formattedDate}
+            <p><strong>${titleCase(student["Emri Mbiemri"])}</strong></p>
+            <p>Nota: ${calculatedGrade}</p>
+            <p>Pikët totale: ${totalPoints}</p>
+            <p>Data: ${formattedDate}</p>
           `;
       } else {
-        resultDiv.textContent = `Nuk kam të dhëna për emrin tënd, ${studentNameInput.value.trim()}.`;
+        resultDiv.textContent = `Nuk kam të dhëna për këtë kod.`;
       }
     }
   });
