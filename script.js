@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resultDiv.innerHTML = `
             <strong>Emri:</strong> ${titleCase(student["Emri Mbiemri"])}<br>
-            <strong>Pikët totale:</strong> ${totalPoints} &rarr; <strong>Nota:</strong> ${calculatedGrade}<br>
+            <strong>Nota:</strong> ${calculatedGrade} (Pikët totale: ${totalPoints});
             <strong>Data:</strong> ${formattedDate}
           `;
       } else {
