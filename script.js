@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resultDiv.innerHTML = `
             <strong>Emri:</strong> ${titleCase(student["Emri Mbiemri"])}<br>
-            <strong>Nota:</strong> ${calculatedGrade} (Pikët totale: ${totalPoints});
+            <strong>Nota:</strong> ${calculatedGrade}<br>
+            <strong>Pikët totale:</strong> ${totalPoints}<br>
             <strong>Data:</strong> ${formattedDate}
           `;
       } else {
@@ -61,9 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Funksioni për llogaritjen e notës
   function calculateGrade(totalPoints) {
     const maxPoints = 100;
+
+    // Kontrollo nëse pikët janë më të vogla se 45
+    if (totalPoints < 45) {
+      return 4;
+    }
+
+    // Nëse pikët janë më të mëdha se 44, llogarit notën normale
     return Math.round((totalPoints / maxPoints) * 10);
   }
 
