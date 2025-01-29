@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (student) {
         // Përpuno datën nga formati JSON
-        const [day, month, year] = student["Start time"].split(' ')[0].split('.');
+        const [month, day, year] = student["Start time"].split(' ')[0].split('.');
         const formattedDate = `${day}.${month}.${year}`;
 
         // Llogarit notën
@@ -52,8 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resultDiv.innerHTML = `
             <strong>Emri:</strong> ${titleCase(student["Emri Mbiemri"])}<br>
-            <strong>Nota:</strong> ${calculatedGrade}<br>
-            <strong>Pikët totale:</strong> ${totalPoints}<br>
+            <strong>Pikët totale:</strong> ${totalPoints} / <strong>Nota:</strong> ${calculatedGrade}<br>
             <strong>Data:</strong> ${formattedDate}
           `;
       } else {
