@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const calculatedGrade = calculateGrade(totalPoints);
 
         resultDiv.innerHTML = `
-            <p><strong>${titleCase(student["Emri Mbiemri"])}</strong></p>
+            <p>Kodi juaj ka këto të dhëna:</p>
             <p>Nota: ${calculatedGrade}</p>
             <p>Pikët totale: ${totalPoints}</p>
             <p>Data: ${formattedDate}</p>
