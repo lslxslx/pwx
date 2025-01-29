@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Filtrimi i të dhënave të studentëve
-      const student = studentData.find(student => student["Kodi"] === code);
+      const student = studentData.find(student => student["Kodi"].toString() === code);
 
       if (student) {
         // Përpuno datën nga formati JSON
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const calculatedGrade = calculateGrade(totalPoints);
 
         resultDiv.innerHTML = `
-            <p>Kodi juaj ka këto të dhëna:</p>
             <p>Nota: ${calculatedGrade}</p>
             <p>Pikët totale: ${totalPoints}</p>
             <p>Data: ${formattedDate}</p>
