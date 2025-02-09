@@ -1,1 +1,320 @@
+<html>
 
+<head>
+    <title>
+        CSS BoxModel
+    </title>
+    <style>
+        .stack {
+            display: grid;
+            grid: [stack] / [stack];
+            perspective: 5000;
+
+            &:before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background: lch(95 0 0);
+                transition: background 2s ease;
+                pointer-events: none;
+            }
+
+            &:matches(:hover, :active) {
+                &:before {
+                    background: lch(15 0 0);
+                }
+            }
+
+            &:matches(:hover, :active) .card {
+                --bg-opacity: 5%;
+                transition-duration: 2s;
+                transition-timing-function: var(--easeInOutCirc);
+                transform:
+                    rotateX(45deg) rotate(45deg) translateZ(var(--z-offset)) translateY(20vh) translateX(20vh);
+
+                &:nth-child(1) {
+                    --z-offset: 75vh;
+                }
+
+                &:nth-child(2) {
+                    --z-offset: 50vh;
+                }
+
+                &:nth-child(3) {
+                    --z-offset: 25vh;
+                }
+
+                &:nth-child(4) {
+                    --z-offset: 0vh;
+                }
+
+                &:nth-child(5) {
+                    --z-offset: -25vh;
+                }
+
+                &:nth-child(1)::after {
+                    transition-delay: 1.5s;
+                }
+
+                &:nth-child(2)::after {
+                    transition-delay: 1.7s;
+                }
+
+                &:nth-child(3)::after {
+                    transition-delay: 1.9s;
+                }
+
+                &:nth-child(4)::after {
+                    transition-delay: 2.1s;
+                }
+
+                &:nth-child(5)::after {
+                    transition-delay: 2.3s;
+                }
+
+                &::after {
+                    opacity: 1;
+                    transform: rotate(-45deg) rotateY(45deg) translateX(0px);
+                }
+
+                &.content {
+                    background: transparent;
+                    color: white;
+                    border-color: transparent;
+                    transition:
+                        border-color 1s var(--easeInOutCirc) 0s,
+                        background-color 1s var(--easeInOutCirc) 0s,
+                        color 1s var(--easeInOutCirc) 0s,
+                        transform 2s var(--easeInOutCirc) 0s;
+                }
+
+                &.padding {
+                    transition-delay: .1s;
+                }
+
+                &.border {
+                    transition-delay: .2s;
+                }
+
+                &.background {
+                    background: white;
+                    transition:
+                        background-color 2s var(--easeInOutCirc) .3s,
+                        transform 2s var(--easeInOutCirc) .2s;
+                }
+
+                &.box-shadow {
+                    transition-delay: .4s;
+                    box-shadow:
+                        0 -1px 25px rgba(0, 0, 0, 0.4),
+                        0 7.6px 6.1px rgba(0, 0, 0, 0.051),
+                        0 14.3px 11.5px rgba(0, 0, 0, 0.059),
+                        0 25.5px 20.5px rgba(0, 0, 0, 0.07),
+                        0 47.6px 38.4px rgba(0, 0, 0, 0.094),
+                        0 114px 92px rgba(0, 0, 0, 0.19);
+                }
+            }
+        }
+
+        .card {
+            grid-area: stack;
+
+            --z-offset: 0;
+            --easeInOutCirc: cubic-bezier(0.85, 0, 0.15, 1);
+            --bg-opacity: 0%;
+
+            transition: transform 4s ease;
+
+            inline-size: 40vmin;
+            block-size: 40vmin;
+            box-sizing: border-box;
+            color: white;
+            box-sizing: border-box;
+            background: lch(100 0 0 / 5%);
+            position: relative;
+
+            @media (orientation: landscape) {
+                inline-size: 40vh;
+                block-size: 40vh;
+            }
+
+            @media (max-width: 540px) {
+                inline-size: 60vw;
+                block-size: 60vw;
+            }
+
+            &:nth-child(1) {
+                z-index: 3;
+            }
+
+            &:nth-child(2) {
+                z-index: 2;
+            }
+
+            &::after {
+                content: "Box";
+                position: absolute;
+                left: -45%;
+                top: 110%;
+                font-size: 1.25rem;
+                text-shadow: 0 1px 3px lch(0 0 0 / 75%);
+                white-space: nowrap;
+                padding: 1ch 2ch;
+                border-radius: 4ch;
+                opacity: 0;
+                transition: opacity .5s ease 0s, transform .5s ease;
+                transform: rotate(-45deg) rotateY(45deg) translateX(20px);
+                background: lch(0 0 0 / 70%);
+
+                @media (max-width: 540px) {
+                    left: -20%;
+                    top: 70%;
+                }
+            }
+
+            &.content {
+                z-index: 5;
+                transition:
+                    border-color 4s ease,
+                    background-color 5s ease 2s,
+                    color 4s ease 0s,
+                    transform 4s ease 0s;
+                padding: 5vmin;
+                font-size: max(2.5vmin, .9rem);
+                line-height: 1.5;
+                background: lch(100 0 0);
+                border: 5px solid #3055f9;
+                color: black;
+
+                &::after {
+                    content: "Content Box";
+                    left: -50%;
+
+                    @media (max-width: 540px) {
+                        left: -23%;
+                    }
+                }
+            }
+
+            &.padding {
+                background: transparent;
+                z-index: 4;
+                transition-delay: .1s;
+
+                &::after {
+                    content: "Padding Box";
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    clip-path: polygon(0% 0%, 0% 100%,
+                            5vmin 100%, 5vmin 5vmin,
+                            calc(100% - 5vmin) 5vmin,
+                            calc(100% - 5vmin) calc(100% - 5vmin),
+                            5vmin calc(100% - 5vmin), 5vmin 100%,
+                            100% 100%, 100% 0%);
+                    background: repeating-linear-gradient(-45deg,
+                            #A4E8E0, #c7e8a4 1px,
+                            lch(100 0 0 / 5%) 1px, lch(100 0 0 / 5%) 10px);
+                }
+            }
+
+            &.border {
+                z-index: 3;
+                background: transparent;
+                transition-delay: .2s;
+
+                &::after {
+                    content: "Border Box";
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    clip-path: polygon(0% 0%, 0% 100%,
+                            5px 100%, 5px 5px,
+                            calc(100% - 5px) 5px,
+                            calc(100% - 5px) calc(100% - 5px),
+                            5px calc(100% - 5px), 5px 100%,
+                            100% 100%, 100% 0%);
+                    background: linear-gradient(#3055f9, #3055f9);
+                }
+            }
+
+            &.background {
+                z-index: 2;
+                transition:
+                    background-color 4s ease .3s,
+                    transform 4s ease .3s;
+
+                &::after {
+                    content: "Background Box";
+                }
+            }
+
+            &.box-shadow {
+                z-index: 1;
+                background: transparent;
+                transition:
+                    box-shadow 4s ease .4s,
+                    transform 4s ease .4s;
+
+                box-shadow:
+                    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+                    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                    0 12.5px 10px rgba(0, 0, 0, 0.035),
+                    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+                    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+                    0 100px 80px rgba(0, 0, 0, 0.07);
+
+
+                &::after {
+                    content: "Shadow Box";
+                }
+            }
+        }
+
+        body {
+            min-block-size: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui;
+            background: lch(30 0 0);
+        }
+
+        p:first-of-type {
+            margin-block-start: 0;
+        }
+
+        @media (hover:hover) {
+            #mobile-prompt {
+                display: none;
+            }
+        }
+
+        @media (hover:none) {
+            #desktop-prompt {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stack">
+        <div class="content card">
+            <p><b><span id="desktop-prompt">Eja</span><span id="mobile-prompt">Prek</span> mbi mua!</b></p>
+            <p>Jam vetëm një përmbajtje tekst.</p>
+        </div>
+        <div class="padding card"></div>
+        <div class="border card"></div>
+        <div class="background card"></div>
+        <div class="box-shadow card"></div>
+    </div>
+</body>
+
+</html>
