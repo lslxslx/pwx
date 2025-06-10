@@ -1,22 +1,97 @@
 [
-    {
-        "Kodi": "L1234",
-        "Start time": "1.27.25 11:19:51",
-        "Total points": 42
-    },
-    {
-        "Kodi": 123456,
-        "Start time": "1.27.25 11:19:54",
-        "Total points": 52
-    },
-    {
-        "Kodi": 1234567,
-        "Start time": "1.27.25 11:20:09",
-        "Total points": 52
-    },
-    {
-        "Kodi": 12345678,
-        "Start time": "1.27.25 11:20:04",
-        "Total points": 45
-    }
+  {
+    "Start time": "6.9.2025 12:13:00",
+    "Total points": 55,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:11:08",
+    "Total points": 61,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:21:26",
+    "Total points": 55,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:08:28",
+    "Total points": 52,
+    "Kodi": "Adonis00"
+  },
+  {
+    "Start time": "6.9.2025 12:22:36",
+    "Total points": 55,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:10:50",
+    "Total points": 59,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:09:58",
+    "Total points": 64,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:10:53",
+    "Total points": 61,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:29:50",
+    "Total points": 55,
+    "Kodi": 2118
+  },
+  {
+    "Start time": "6.9.2025 12:20:24",
+    "Total points": 58,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:08:26",
+    "Total points": 55,
+    "Kodi": 2004
+  },
+  {
+    "Start time": "6.9.2025 12:11:57",
+    "Total points": 55,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:27:00",
+    "Total points": 55,
+    "Kodi": 4321
+  },
+  {
+    "Start time": "6.9.2025 12:10:45",
+    "Total points": 58,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:10:54",
+    "Total points": 55,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:09:18",
+    "Total points": 50,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:12:58",
+    "Total points": 61,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:08:21",
+    "Total points": 61,
+    "Kodi": ""
+  },
+  {
+    "Start time": "6.9.2025 12:08:43",
+    "Total points": 66,
+    "Kodi": 2020
+  }
 ]
